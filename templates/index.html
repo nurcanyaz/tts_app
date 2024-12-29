@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Generator - Free Text to Speech</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='voice-logo.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <section class="main-section">
+        <!-- Logo ve Başlık -->
+        <div class="header">
+            <div class="header-box">
+                <div class="header-content">
+                    <div class="logo-container">
+                        <a href="/" class="logo">
+                            <img src="{{ url_for('static', filename='voice-logo.svg') }}" alt="Voice Generator Logo" class="logo-img">
+                            <span>Voice Generator</span>
+                        </a>
+                        <p class="subtitle">free text to speech</p>
+                    </div>
+                    <div class="title">
+                        <h1>TEXT TO SPEECH</h1>
+                        <p class="description">Transform your text into natural-sounding speech with advanced AI technology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ana TTS Formu -->
+        <div class="wrapper" id="conversion-form">
+            <div class="form-grid">
+                <!-- Sol Taraf - Metin Girişi -->
+                <div class="text-input">
+                    <p class="character-info">Maximum characters 1000 remaining <span>1000</span> available</p>
+                    <div class="input-box">
+                        <textarea placeholder="Enter text to convert into speech..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Sağ Taraf - Ayarlar -->
+                <div class="settings-side">
+                    <div class="voice-settings">
+                        <div class="setting">
+                            <label>Language</label>
+                            <select class="language-select">
+                                <option value="en-US" selected>English (United States)</option>
+                            </select>
+                        </div>
+                        <div class="setting">
+                            <label>Voice</label>
+                            <select class="voice-select"></select>
+                        </div>
+                        <div class="setting">
+                            <label>Speed</label>
+                            <input type="range" class="speed-input" min="0.5" max="2" step="0.1" value="1">
+                            <span class="speed-value">1x</span>
+                        </div>
+                        <div class="setting">
+                            <label>Pitch</label>
+                            <input type="range" class="pitch-input" min="0.1" max="2" step="0.1" value="1">
+                            <span class="pitch-value">1x</span>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="convert-btn">
+                            <i class="fas fa-play"></i>
+                            Convert To Speech
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dönüştürme Sonucu -->
+        <div class="wrapper result-wrapper" id="conversion-result" style="display: none;">
+            <div class="result-content">
+                <div class="success-header">
+                    <span class="success-emoji">🎉</span>
+                    <h2>Convert text to speech success!</h2>
+                </div>
+                
+                <div class="audio-visualization">
+                    <div class="waveform" id="waveform"></div>
+                    <div class="audio-controls">
+                        <div class="time-info">
+                            <span class="current-time">0:00</span>
+                            <span class="duration">0:00</span>
+                        </div>
+                        <div class="control-buttons">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-buttons">
+                    <button class="download-btn">
+                        <i class="fas fa-download"></i>
+                        Download Voice File
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-content">
+            <h2><i class="fas fa-question-circle"></i> How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h3>1. Enter Text</h3>
+                    <p>Type or paste your text into the input box. Supports up to 1000 characters per conversion.</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-language"></i>
+                    <h3>2. Choose Settings</h3>
+                    <p>Select your preferred language, voice, speed, and pitch settings.</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-play"></i>
+                    <h3>3. Generate Audio</h3>
+                    <p>Click convert and get your high-quality audio file instantly!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-content">
+            <h2><i class="fas fa-lightbulb"></i> Use Cases</h2>
+            <div class="cases">
+                <div class="case">
+                    <i class="fas fa-book"></i>
+                    <h3>E-Learning</h3>
+                    <p>Create engaging audio content for online courses, tutorials, and educational materials.</p>
+                </div>
+                <div class="case">
+                    <i class="fas fa-universal-access"></i>
+                    <h3>Accessibility</h3>
+                    <p>Make your content accessible to visually impaired users and improve inclusivity.</p>
+                </div>
+                <div class="case">
+                    <i class="fas fa-podcast"></i>
+                    <h3>Content Creation</h3>
+                    <p>Generate professional voiceovers for videos, podcasts, and presentations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Languages section -->
+    <section class="section popular-languages">
+        <div class="section-content">
+            <h2><i class="fas fa-globe"></i> Most Popular Languages We Support</h2>
+            <div class="language-buttons">
+                <!-- JavaScript ile doldurulacak -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="section-content">
+            <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">What file format will I receive?</div>
+                    <div class="faq-answer">Your text will be converted to MP3 format, which is widely supported across all devices and platforms.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How many characters can I convert at once?</div>
+                    <div class="faq-answer">You can convert up to 1000 characters per conversion. For longer texts, you can split them into multiple conversions.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are the generated audio files free to use?</div>
+                    <div class="faq-answer">Yes! You have 100% ownership and commercial rights to all audio files generated using our service.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Which languages are supported?</div>
+                    <div class="faq-answer">We support 20 languages including English (US), English (UK), English (Australia), Spanish, French, German, Italian, Portuguese, Japanese, Korean, Chinese (Traditional), Chinese (Simplified), Russian, Arabic, Hindi, Turkish, Dutch, Polish, Swedish, and Indonesian.</div>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-content">
+            <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/nurcan-yaz" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/nurcanyaz" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="mailto:yaznurcan25@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+    // Dil listesi
+    const languages = [
+        { code: 'en-US', name: 'English (US)', icon: '🇺🇸' },
+        { code: 'en-GB', name: 'English (UK)', icon: '🇬��' },
+        { code: 'en-AU', name: 'English (Australia)', icon: '🇦🇺' },
+        { code: 'zh-TW', name: 'Chinese (Traditional)', icon: '🇹🇼' },
+        { code: 'zh-CN', name: 'Chinese (Simplified)', icon: '🇨🇳' },
+        { code: 'nl', name: 'Dutch', icon: '🇳🇱' },
+        { code: 'fr', name: 'French', icon: '🇫🇷' },
+        { code: 'de', name: 'German', icon: '🇩🇪' },
+        { code: 'hi', name: 'Hindi', icon: '🇮🇳' },
+        { code: 'id', name: 'Indonesian', icon: '🇮🇩' },
+        { code: 'it', name: 'Italian', icon: '🇮🇹' },
+        { code: 'ja', name: 'Japanese', icon: '🇯🇵' },
+        { code: 'ko', name: 'Korean', icon: '🇰🇷' }
+    ];
+
+    // Dil butonlarını oluştur
+    const languageButtons = document.querySelector('.language-buttons');
+    languages.forEach(lang => {
+        const button = document.createElement('a');
+        button.href = `/${lang.code}`;
+        button.className = 'language-button';
+        button.innerHTML = `${lang.icon} ${lang.name}`;
+        languageButtons.appendChild(button);
+    });
+    </script>
+</body>
+</html>

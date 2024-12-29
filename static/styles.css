@@ -1,0 +1,781 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+::selection{
+  color: #fff;
+  background: #5256AD;
+}
+
+/* Ana TTS bölümü */
+.main-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Header Styles */
+.header {
+    margin-bottom: 2rem;
+}
+
+.header-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    gap: 0.5rem;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+}
+
+.title {
+    flex-grow: 1;
+}
+
+.title h1 {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.description {
+    color: #666;
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Form Wrapper */
+.wrapper {
+    width: 100%;
+    max-width: 1000px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+/* Form Grid Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+}
+
+/* Text Input Bölümü */
+.text-input {
+    margin-bottom: 0;
+}
+
+.character-info {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.character-info span {
+  color: #5256AD;
+  font-weight: 500;
+}
+
+.input-box {
+  position: relative;
+  height: calc(100% - 30px);
+}
+
+.input-box textarea {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: none;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-box textarea:focus {
+  border-color: #5256AD;
+}
+
+.controls {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.insert-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 15px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.insert-btn:hover {
+  background: #e9ecef;
+}
+
+/* Sağ taraf ayarlar bölümü */
+.settings-side {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Voice Settings Bölümü */
+.voice-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 0;
+}
+
+.setting {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.setting label {
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.setting label span {
+  font-size: 14px;
+  color: #666;
+  font-weight: normal;
+}
+
+.setting select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+  background: #fff;
+}
+
+.setting select:focus {
+  border-color: #5256AD;
+}
+
+/* Range input stilleri */
+.setting input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background: #ddd;
+  outline: none;
+  margin: 10px 0;
+}
+
+.setting input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #5256AD;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.setting input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.setting .speed-value,
+.setting .pitch-value {
+  font-size: 14px;
+  color: #666;
+  text-align: right;
+}
+
+.captcha-box {
+  display: flex;
+  gap: 10px;
+}
+
+.captcha-box input {
+  flex: 1;
+}
+
+.captcha-box img {
+  height: 42px;
+  border-radius: 5px;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 15px;
+}
+
+.settings-btn, .convert-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.settings-btn {
+  background: #f8f9fa;
+  color: #666;
+  flex: 1;
+}
+
+.settings-btn:hover {
+  background: #e9ecef;
+}
+
+.convert-btn {
+  background: #5256AD;
+  color: #fff;
+  flex: 2;
+}
+
+.convert-btn:hover {
+  background: #4534fe;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1024px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .input-box {
+        height: 300px;
+    }
+
+    .settings-side {
+        gap: 20px;
+    }
+}
+
+/* Yeni bölümler için stiller */
+.section {
+    padding: 1.5rem;
+    background: white;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section:nth-child(odd) {
+    background: #f8f9fa;
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 50px;
+    font-size: 36px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #5256AD;
+}
+
+.section h2 i {
+    margin-right: 15px;
+    color: #5256AD;
+}
+
+/* Nasıl Çalışır bölümü */
+.steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px;
+}
+
+.step {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+}
+
+.step i {
+    font-size: 50px;
+    color: #5256AD;
+    margin-bottom: 20px;
+}
+
+.step h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.step p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* Ne İçin Kullanılır bölümü */
+.cases {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px;
+}
+
+.case {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.case:hover {
+    transform: translateY(-10px);
+}
+
+.case i {
+    font-size: 50px;
+    color: #5256AD;
+    margin-bottom: 20px;
+}
+
+.case h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.case p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* İletişim bölümü */
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 20px;
+    width: 100%;
+}
+
+.contact-info {
+    flex: 2;
+    min-width: 300px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-info p {
+    margin: 20px 0;
+    color: #666;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    margin-right: 15px;
+    color: #5256AD;
+    font-size: 24px;
+    width: 30px;
+}
+
+.social-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #5256AD;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    background: #4534fe;
+}
+
+.social-link i {
+    font-size: 28px;
+}
+
+/* Responsive tasarım için medya sorguları */
+@media (max-width: 768px) {
+    .section {
+        padding: 30px 15px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .step, .case {
+        min-width: 100%;
+        padding: 20px;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .social-links {
+        justify-content: center;
+        padding-top: 20px;
+    }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Sonuç Ekranı Stilleri */
+.result-wrapper {
+    display: none;
+}
+
+.result-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.success-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.success-emoji {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.success-header h2 {
+    color: #333;
+    margin: 0;
+}
+
+/* Ses Görselleştirme */
+.audio-visualization {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.waveform {
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.audio-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time-info {
+    color: #666;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #6C63FF;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+    background: #5952d4;
+}
+
+/* Sonuç Bilgileri */
+.result-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.result-info p {
+    color: #666;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.result-info i {
+    color: #5256AD;
+}
+
+/* Sonuç Butonları */
+.result-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.result-buttons button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.history-btn {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.history-btn:hover {
+    background: #e0e0e0;
+}
+
+.download-btn {
+    background: #FFD700;
+    color: #333;
+}
+
+.download-btn:hover {
+    background: #FFC700;
+}
+
+/* İndirme Yardımı */
+.download-help {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.switch-link {
+    color: #5256AD;
+    text-decoration: none;
+}
+
+.switch-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+    .result-buttons {
+        flex-direction: column;
+    }
+    
+    .audio-controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Popular Languages Section */
+.popular-languages {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+.language-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.language-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: #f5f5f5;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.language-button:hover {
+    background: #e0e0e0;
+}
+
+.language-button.active {
+    background: #6C63FF;
+    color: white;
+}
+
+.language-button span {
+    font-size: 24px;
+}
+
+/* FAQ Section */
+.faq-section {
+    background: #fff;
+    padding: 60px 0;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.faq-answer {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
